@@ -10,6 +10,7 @@ class Game {
     this.player = new Player();
     // obstacles
     this.animate();
+    this.obstacles = [];
   }
 
   animate() {
@@ -76,7 +77,7 @@ class Coin {
     this.size = { x: 30, y: 30 };
     this.center = { x: gameSize.x / 2, y: gameSize.y - this.size.y * 2 };
     this.keyboarder = Keyboarder;
-    console.log(this.keyboarder);
+    this.game = game;
   }
 
   draw() {
@@ -93,5 +94,13 @@ class Coin {
     );
   }
 }
-
+class Obstacle {
+  constructor(game, position, velocity) {
+    this.game = game;
+    this.velocity = velocity;
+    this.length = 166;
+    this.center = position;
+    console.log(this);
+  }
+}
 new Game();
