@@ -78,6 +78,8 @@ class Coin {
     this.center = { x: gameSize.x / 2, y: gameSize.y - this.size.y * 2 };
     this.keyboarder = Keyboarder;
     this.game = game;
+    //randomly place the coin on canvas within the box
+    this.center = { x: Math.random() * 800, y: Math.random() * 600 };
   }
 
   draw() {
@@ -100,7 +102,10 @@ class Obstacle {
     this.velocity = velocity;
     this.length = 166;
     this.center = position;
-    console.log(this);
+  }
+
+  draw() {
+    screen.fillStyle = "#FF0000";
   }
 }
 new Game();
